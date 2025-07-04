@@ -1,0 +1,14 @@
+package com.study.springboot.dao;
+
+
+@Repository
+public class SimpleBbsDao implements ISimpleBbsDao
+{
+	@Autowired
+	JdbcTemplate template;
+	
+	@Override
+	pulic Lis
+	
+	
+}

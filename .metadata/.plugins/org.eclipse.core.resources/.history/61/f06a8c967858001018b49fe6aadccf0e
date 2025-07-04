@@ -1,0 +1,13 @@
+package com.study.springboot;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class Ex17MyBatisParampplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(Ex18_MyBatis_ResultNumaplication.class, args);
+	}
+
+}

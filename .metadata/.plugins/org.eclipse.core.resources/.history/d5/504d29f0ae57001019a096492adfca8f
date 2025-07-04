@@ -1,0 +1,30 @@
+package com.study.springboot.dao;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
+
+import com.study.springboot.dto.SimpleBbsDto;
+
+@Repository
+public class ISimpleBbsDao
+{
+	@Autowired
+	private JdbcTemplate jdbcTemplate;
+	
+	public List<SimpleBbsDto> list() {
+		String query = "SELECT * FROM myuser";
+		List<SimpleBbsDto> list = jdbcTemplate.query(
+				query, new BeanPropertyRowMapper<SimpleBbsDto>(SimpleBbsDto.class));
+
+		for (SimpleBbsDto my : list) 
+		{
+				System.out.println(my);
+		} 
+		
+		return list;
+	}
+}
