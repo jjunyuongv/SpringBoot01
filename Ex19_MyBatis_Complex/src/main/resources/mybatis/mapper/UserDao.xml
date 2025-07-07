@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Mapper파일을 구성하기 위한 Doctype설정 -->
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.study.springboot.jdbc.IDao">
+	<!-- <select id="getEmployee" resultType="om.study.springboot.jdbc.UserDTO">
+		SELECT A.last_name, B.department_id, B.department_name
+			FROM employees A, departments B
+		 WHERE A.department_id = B.department_id
+		 	AND B.department_id = 10
+	</select> -->
+	
+	<select id="getEmployee" resultType="com.study.springboot.jdbc.UserDTO">
+		SELECT A.last_name AS ename1, B.department_id AS dno1, B.department_name AS dname1
+			FROM employees A, departments B
+		 WHERE A.department_id = B.department_id
+		 	AND B.department_id = 100
+	</select>
+	
+	<!-- 
+		1.sql 문 뒤에 세미콜론 절대 들어가면 안된다.
+		2.여기서 사용한 컬럼명으로 DTO(Value Object)의 필드명을 만들어야 한다.
+		3.select a.dno, b.dno 등의 경우 컬러명에 alias를 사용하지 않으면 문제 생김
+	 -->
+</mapper>

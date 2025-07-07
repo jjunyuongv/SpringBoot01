@@ -1040,3 +1040,11 @@ org.eclipse.core.runtime.CoreException: Could not read maven project
 2025-07-03 09:38:08,181 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
 2025-07-03 09:38:09,076 [Worker-6: Decoration Calculation] WARN  org.eclipse.jgit.util.FS_Win32 - null
 2025-07-04 09:56:12,545 [Worker-5: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2025-07-04 11:02:04,857 [Worker-5: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2025-07-04 11:14:20,533 [Worker-2: Auto share git projects] WARN  org.eclipse.jgit.util.FS_Win32 - null
+2025-07-04 12:33:07,975 [Worker-6: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2025-07-04 12:33:08,718 [Worker-5: Decoration Calculation] WARN  org.eclipse.jgit.util.FS_Win32 - null
+2025-07-04 12:36:07,864 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2025-07-04 12:36:09,180 [Worker-9: Decoration Calculation] WARN  org.eclipse.jgit.util.FS_Win32 - null
+2025-07-07 09:32:26,293 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2025-07-07 09:32:27,282 [Worker-0: Decoration Calculation] WARN  org.eclipse.jgit.util.FS_Win32 - null

@@ -8,8 +8,6 @@
 	서비스 인터페이스를 namespace로 지정한다. 컨트롤러에서 해당 인터페이스를 
 	통해 Mapper의 메서드를 호출하게 된다. 
 -->
-<!-- MyUserDTO를 IMyUserDao에 넣는다.
-(namespace는 이 매퍼가 어떤 인터페이스와 관련된 매퍼인지를 알려준다)-->
 <mapper namespace="com.study.springboot.dao.ISimpleBbsDao">
 	<!-- 
 		네임스페이스로 지정된 인터페이스의 getUser()메서드를 통해 해당
@@ -18,19 +16,26 @@
 		반환한다. 
 	 -->
 	<select id="listDao" resultType="com.study.springboot.dto.SimpleBbsDto">
-		SELECT * FROM simple_bbs ORDER BY id DESC
+		<!-- listDo()의 select문 -->
+		SELECT * FROM simple_bbs ORDER BY id DESC  
 	</select>
 	
+	<!-- 한개의 게시물 인출 -->
 	<select id="viewDao" resultType="com.study.springboot.dto.SimpleBbsDto">
+		<!-- 1개이므로 파라미터가 있어야함. -->
 		SELECT * FROM simple_bbs WHERE id = #{param1}
 	</select>
 	
-	<insert id = "writeDao">
+	<!-- 게시물 등록. DTO의 멤버변수명을 통해 저장된 값을 쿼리문에 적용한다. -->
+	<insert id="writeDao">
+		<!-- 결과 값이 없으므로 resultType이 필요 없음. -->
 		INSERT INTO simple_bbs (id, writer, title, content)
 			VALUES (simple_bbs_seq.nextval, #{param1}, #{param2}, #{param3})
 	</insert>
 	
+	<!-- 게시물 삭제 -->
 	<delete id="deleteDao">
+		<!-- 결과 값이 없으므로 resultType이 필요 없음. -->
 		DELETE FROM simple_bbs WHERE id = #{param1}
 	</delete>
 </mapper>

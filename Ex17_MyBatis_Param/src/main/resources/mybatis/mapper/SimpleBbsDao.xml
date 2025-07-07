@@ -3,34 +3,37 @@
 <!DOCTYPE mapper
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-    
-<!-- 
-	서비스 인터페이스를 namespace로 지정한다. 컨트롤러에서 해당 인터페이스를 
-	통해 Mapper의 메서드를 호출하게 된다. 
--->
-<!-- MyUserDTO를 IMyUserDao에 넣는다.
-(namespace는 이 매퍼가 어떤 인터페이스와 관련된 매퍼인지를 알려준다)-->
+
 <mapper namespace="com.study.springboot.dao.ISimpleBbsDao">
-	<!-- 
-		네임스페이스로 지정된 인터페이스의 getUser()메서드를 통해 해당
-		엘리먼트가 실행된다. 파라미터와 결과셋 모두 MyUserDTO객체를
-		사용하고 있다. select 엘리먼트는 쿼리를 실행한 후 List컬렉션으로
-		반환한다. 
-	 -->
+
 	<select id="listDao" resultType="com.study.springboot.dto.SimpleBbsDto">
-		SELECT * FROM simple_bbs ORDER BY id DESC
+		<!-- listDo()의 select문 -->
+		SELECT * FROM simple_bbs ORDER BY id DESC  
 	</select>
 	
+	<!-- 파라미터의 순서대로 접근하되 인덱스 1부터 시작한다. -->
 	<select id="viewDao" resultType="com.study.springboot.dto.SimpleBbsDto">
 		SELECT * FROM simple_bbs WHERE id = #{1}
 	</select>
 	
-	<insert id = "writeDao">
+	<!-- 
+		매개변수의 순서에 따라 param1부터 기술한다. 메서드는 
+		insert(String writer, String title, String content)
+		와 같이 정의되어 있다. 
+	 -->
+	<insert id="writeDao">
+		<!-- 결과 값이 없으므로 resultType이 필요 없음. -->
 		INSERT INTO simple_bbs (id, writer, title, content)
 			VALUES (simple_bbs_seq.nextval, #{param1}, #{param2}, #{param3})
 	</insert>
 	
+	<!-- 
+		@Param 어노테이션에서 지정한 이름을 인파라미터로 사용한다.
+		deleteDao(@Param("_id")String id)이와 같이 정의
+		되어있다.
+	 -->
 	<delete id="deleteDao">
+		<!-- 결과 값이 없으므로 resultType이 필요 없음. -->
 		DELETE FROM simple_bbs WHERE id = #{_id}
 	</delete>
 </mapper>

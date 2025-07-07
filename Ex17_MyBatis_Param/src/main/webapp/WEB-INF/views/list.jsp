@@ -9,7 +9,7 @@
 		<style type="text/css">
 		table {
 			border-spacing: 0;
-			width: 500px;
+			width: 500px
 		}
 		table td, table th{
 			padding: 0;
