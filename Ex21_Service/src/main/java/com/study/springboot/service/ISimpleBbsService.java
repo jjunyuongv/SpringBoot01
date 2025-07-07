@@ -12,6 +12,6 @@ public interface ISimpleBbsService
 	public List<SimpleBbsDto> list();
 	public SimpleBbsDto view(String id);
 	public int write(Map<String, String> map);
-	public int delete(@Param("_id")String id);
+	public int delete(@Param("_id") String id);
 	public int count();
 }
